@@ -16,8 +16,6 @@ export async function GET(req: NextRequest) {
 
     const jsonArray = await csv().fromStream(request.get(dataSource));
 
-    console.log("jsonArray: ", JSON.stringify(jsonArray));
-
     const levelFiltered = jsonArray.filter((item: any) => item['Level'] == level);
 
     return NextResponse.json(
@@ -27,6 +25,4 @@ export async function GET(req: NextRequest) {
             "lastUpdated": new Date().toISOString()
         }
         , { status: 200 });
-
-
 }
