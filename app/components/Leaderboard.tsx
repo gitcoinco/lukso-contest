@@ -20,7 +20,7 @@ export function Leaderboard() {
         </h2>
 
         <div className="max-w-3xl mx-auto text-center mb-12 flex flex-col gap-6">
-          <div className="text-center text-white/70 text-[19.06px] font-normal font-['Inter'] leading-7">
+          <div className="text-center text-white/70 text-[19.06px] font-normal leading-7">
             Track your progress in real time on our dynamic leaderboard. Across
             four levels, builders will compete for a $150,000 LYX prize pool by
             launching functional mini dApps on LUKSO Mainnet.

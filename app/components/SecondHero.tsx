@@ -32,10 +32,10 @@ export function SecondHero() {
           {/* Text content - left column */}
           <div className="w-full md:w-1/2 text-left relative z-10">
 
-            <div className="text-[#ff2975] text-5xl font-medium font-['Inter'] leading-[54px] mb-4">
+            <div className="text-[#ff2975] text-5xl font-medium leading-[54px] mb-4">
               Break the system, build the future
             </div>
-            <div className="text-white/70 text-[17.02px] font-medium font-['Inter'] leading-[29.25px]">
+            <div className="text-white/70 text-[17.02px] font-medium leading-[29.25px]">
               LUKSO is launching Hack The Grid, a four-level builder program designed to push mini dApps to the next level.
               This initiative challenges developers to build high-impact mini dApps for The Grid, 
               a feature that transforms Universal Profiles into dynamic, interactive spaces where digital identity, 

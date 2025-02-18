@@ -24,13 +24,13 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-2 mb-8">
-          <div className="text-center text-white text-[40px] font-semibold font-['Inter'] leading-[54px]">
+          <div className="text-center text-white text-[40px] font-semibold leading-[54px]">
             LUKSO Grants Wave 2
           </div>
           <div className="text-center text-white text-[90px] font-bold font-['Vipnagorgialla'] leading-[99px]">
             HACK THE GRID
           </div>
-          <div className="text-center text-white text-[40px] font-semibold font-['Inter'] leading-[54px]">
+          <div className="text-center text-white text-[40px] font-semibold leading-[54px]">
             Break the System, Build the Future
           </div>
         </div>
