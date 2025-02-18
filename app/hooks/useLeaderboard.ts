@@ -79,6 +79,7 @@ export function useLeaderboard(week: number) {
             const score = calculateScore(
               metrics,
               maxValues,
+              // @ts-ignore
               prizes[week - 1].weights
             );
             combinedProjects.push({
