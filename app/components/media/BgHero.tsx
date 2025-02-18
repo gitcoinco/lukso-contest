@@ -16,6 +16,7 @@ const BgHero: React.FC<LogoProps> = ({ style }) => {
       height={312}
       priority
       style={style}
+      className="object-cover min-h-[750px] w-full"
     />
   );
 };

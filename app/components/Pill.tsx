@@ -80,7 +80,6 @@ const Pill: React.FC<PillProps> = ({ children, variant = "default" }) => {
     },
     dark: {
       color: "#FFF",
-      fontSize: "24px",
       fontStyle: "normal",
       fontWeight: "500",
       lineHeight: "normal",
@@ -94,10 +93,17 @@ const Pill: React.FC<PillProps> = ({ children, variant = "default" }) => {
       lineHeight: "100%",
     },
   };
-
   return (
-    <div style={pillStyles[variant]}>
-      <span style={textStyles[variant]}>{children}</span>
+    <div
+      style={pillStyles[variant]}
+      className="md:px-5 px-0 mx-auto items-center justify-center text-[24px]"
+    >
+      <span
+        style={textStyles[variant]}
+        className="px-0 lg:text-[24px] text-[20px]"
+      >
+        {children}
+      </span>
     </div>
   );
 };
