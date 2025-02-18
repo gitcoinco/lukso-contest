@@ -1,5 +1,5 @@
 // This would normally come from your backend
-export const CURRENT_WEEK = 3;
+export const CURRENT_WEEK = 1;
 
 // const startDate = new Date("2025-01-27");
 // const today = new Date();
