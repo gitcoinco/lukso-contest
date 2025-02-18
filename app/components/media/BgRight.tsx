@@ -16,6 +16,7 @@ const BgRight: React.FC<LogoProps> = ({ style }) => {
       height={470.02}
       priority
       style={style}
+      className="hidden md:block"
     />
   );
 };
