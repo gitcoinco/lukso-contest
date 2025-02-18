@@ -66,7 +66,10 @@ export function HowItWorks() {
         borderTop: "1px solid rgba(255, 255, 255, 0.06)",
       }}
     >
-      <div className="absolute inset-0 flex items-center justify-center" style={{ zIndex: -1 }}>
+      <div
+        className="absolute inset-0 flex items-center justify-center"
+        style={{ zIndex: -1 }}
+      >
         <Image
           src="/brand/bgHowItWorks.svg"
           alt="How it works background"

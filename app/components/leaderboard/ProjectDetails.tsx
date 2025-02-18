@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import { Globe, Twitter, MessageCircle, ExternalLink } from 'lucide-react';
-import { Project } from '../../types/leaderboard';
+import React from "react";
+import { Globe, Twitter, MessageCircle, ExternalLink } from "lucide-react";
+import { Project } from "../../types/leaderboard";
 
 interface ProjectDetailsProps {
   project: Project;
@@ -13,9 +13,11 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
     <div className="p-4 bg-surface">
       {/* Description */}
       {project.description && (
-        <p className="text-sm text-text-secondary leading-relaxed mb-4">{project.description}</p>
+        <p className="text-sm text-text-secondary leading-relaxed mb-4">
+          {project.description}
+        </p>
       )}
-      
+
       {/* Social Links */}
       <div className="flex flex-wrap gap-4 text-sm mb-4">
         {project.twitter && (

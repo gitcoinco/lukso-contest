@@ -34,7 +34,7 @@ export default function Hero() {
             Break the System, Build the Future
           </div>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <div className="flex flex-col sm:flex-row mt-4 justify-center">
             <Pill variant="dark">Total Funding: $150,000 </Pill>

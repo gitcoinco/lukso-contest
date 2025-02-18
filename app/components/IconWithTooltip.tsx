@@ -1,25 +1,29 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { InfoIcon } from "lucide-react"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { useState } from "react";
+import { InfoIcon } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 type tooltipProps = {
-  text: string
-}
+  text: string;
+};
 
 export const info: { [key: string]: string } = {
-  "tradingVolume": "The volume of the token traded",
-  "uniqueTraders": "The number of unique wallets that have traded the token",
-  "swapUsers": "The number of users who have completed at least 20 swaps.",
-  "averageDaysHeld": "The average time (in days) that traded tokens were held before being sold.  This is calculated per second and extrapolated into a day.  ",
-  "marketCap": "The market cap of the token",
-  "btcOutperformance": "The ratio of the token's price to Bitcoin's price."
-}
+  tradingVolume: "The volume of the token traded",
+  uniqueTraders: "The number of unique wallets that have traded the token",
+  swapUsers: "The number of users who have completed at least 20 swaps.",
+  averageDaysHeld:
+    "The average time (in days) that traded tokens were held before being sold.  This is calculated per second and extrapolated into a day.  ",
+  marketCap: "The market cap of the token",
+  btcOutperformance: "The ratio of the token's price to Bitcoin's price.",
+};
 
-
-export default function IconWithTooltip({text}: tooltipProps) {
-  const [isOpen, setIsOpen] = useState(false)
+export default function IconWithTooltip({ text }: tooltipProps) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -38,5 +42,5 @@ export default function IconWithTooltip({text}: tooltipProps) {
         {info[text] || text}
       </PopoverContent>
     </Popover>
-  )
+  );
 }

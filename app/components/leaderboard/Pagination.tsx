@@ -1,5 +1,5 @@
-import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface PaginationProps {
   currentPage: number;
@@ -16,12 +16,13 @@ export function Pagination({
   startIndex,
   endIndex,
   totalItems,
-  onPageChange
+  onPageChange,
 }: PaginationProps) {
   return (
     <div className="px-6 py-4 flex items-center justify-between border-t border-border">
       <div className="text-sm text-text-secondary">
-        Showing {startIndex + 1} to {Math.min(endIndex, totalItems)} of {totalItems} entries
+        Showing {startIndex + 1} to {Math.min(endIndex, totalItems)} of{" "}
+        {totalItems} entries
       </div>
       <div className="flex gap-2">
         <button
@@ -37,8 +38,8 @@ export function Pagination({
             onClick={() => onPageChange(page)}
             className={`px-3 py-1 rounded ${
               currentPage === page
-                ? 'bg-[#FF2975] text-white'
-                : 'hover:bg-surface-secondary'
+                ? "bg-[#FF2975] text-white"
+                : "hover:bg-surface-secondary"
             }`}
           >
             {page}

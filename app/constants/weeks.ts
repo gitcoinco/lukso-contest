@@ -25,6 +25,6 @@ export const weeks = [
     week.id < CURRENT_WEEK
       ? "past"
       : week.id === CURRENT_WEEK
-      ? "active"
-      : "upcoming",
+        ? "active"
+        : "upcoming",
 }));

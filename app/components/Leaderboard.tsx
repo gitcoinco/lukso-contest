@@ -10,10 +10,7 @@ export function Leaderboard() {
   const router = useRouter();
 
   return (
-    <section
-      className="relative py-20 p-10 overflow-hidden"
-      id="leaderboard"
-    >
+    <section className="relative py-20 p-10 overflow-hidden" id="leaderboard">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-8">
         <h2 className="text-5xl text-[#ff2975] font-medium text-center">
           Live Rankings & Rewards

@@ -44,7 +44,10 @@ export default function Footer() {
             >
               Terms of Service
             </a>
-            <a href="/rules" className="hover:opacity-80 transition-opacity"> | Rules</a>
+            <a href="/rules" className="hover:opacity-80 transition-opacity">
+              {" "}
+              | Rules
+            </a>
           </div>
 
           <div className="flex gap-6">

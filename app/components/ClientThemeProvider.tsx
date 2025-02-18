@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { ThemeProvider } from '../contexts/ThemeContext';
-import Header from './Header';
-import Footer from './Footer';
+import React from "react";
+import { ThemeProvider } from "../contexts/ThemeContext";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default function ClientThemeProvider({
   children,

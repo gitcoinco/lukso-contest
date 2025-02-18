@@ -16,14 +16,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   heading,
   description,
 }) => {
-
   return (
     <div className="border-none w-[405.34px] h-[432px] p-[26px] bg-[#121212]/90 rounded-3xl shadow-lg border flex-col justify-start items-start gap-4 inline-flex overflow-hidden">
       <div className="text-center text-white/70 text-base font-medium leading-7">
         {title}
       </div>
       <div className="flex justify-center items-center mx-auto py-12">
-        <Icon size={42} color="#ff2975"/>
+        <Icon size={42} color="#ff2975" />
       </div>
       <div className="flex-col justify-start items-center flex">
         <div className="text-center text-white text-xl font-bold leading-7">

@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { ThemeProvider } from '../contexts/ThemeContext';
-import Header from './Header';
-import Footer from './Footer';
-import '../styles/brand.css';
-import '../styles/globals.css';
+import React from "react";
+import { ThemeProvider } from "../contexts/ThemeContext";
+import Header from "./Header";
+import Footer from "./Footer";
+import "../styles/brand.css";
+import "../styles/globals.css";
 
 export function ClientLayout({
   children,

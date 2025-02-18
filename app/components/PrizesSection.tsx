@@ -52,12 +52,21 @@ export function PrizesSection() {
     <section className="py-20 px-6 bg-[#0a090d]">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <div className="text-[#ff2975] text-5xl font-medium leading-10">$150,000 in LYX is up for grabs</div>
-          <div className="text-white/70 text-xl font-normal leading-7">Compete weekly. Build community. Secure the bag.</div>
+          <div className="text-[#ff2975] text-5xl font-medium leading-10">
+            $150,000 in LYX is up for grabs
+          </div>
+          <div className="text-white/70 text-xl font-normal leading-7">
+            Compete weekly. Build community. Secure the bag.
+          </div>
         </div>
 
         <div className="flex flex-col gap-4 mx-auto">
-          <Image src="/brand/prize.svg" alt="Prizes" width={1000} height={1000} />
+          <Image
+            src="/brand/prize.svg"
+            alt="Prizes"
+            width={1000}
+            height={1000}
+          />
         </div>
       </div>
     </section>
