@@ -58,7 +58,7 @@ export default function Header() {
                     Leaderboard
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="https://t.me/+OqS-Y3s-dvZjZWFh"
                     className="text-white hover:opacity-90 transition-opacity"
@@ -66,7 +66,7 @@ export default function Header() {
                   >
                     Telegram
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
 
@@ -126,7 +126,7 @@ export default function Header() {
                   Leaderboard
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="https://t.me/+OqS-Y3s-dvZjZWFh"
                   className="text-white text-lg block hover:opacity-90 transition-opacity"
@@ -135,7 +135,7 @@ export default function Header() {
                 >
                   Telegram
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>

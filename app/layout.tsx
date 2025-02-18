@@ -6,27 +6,31 @@ import ClientThemeProvider from "./components/ClientThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Constants for repeated values
+const SITE_TITLE = "HACK THE GRID";
+const SITE_DESCRIPTION = "Break the system, build the future";
+const BASE_URL = "https://lukso.gitcoin.co";
+const LOGO_PATH = "/brand/logo.png";
+
 export const metadata: Metadata = {
-  title: "AI Memecoin Battle Royale",
-  description:
-    "4 Rounds. 2.7M POL. Unlimited Potential. Join the ultimate AI-powered memecoin competition on Polygon.",
-  metadataBase: new URL("https://polygon.gitcoin.co"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(BASE_URL),
   icons: {
-    icon: "/ico.svg",
-    apple: "/ico.svg",
+    icon: LOGO_PATH,
+    apple: LOGO_PATH,
   },
   openGraph: {
-    title: "AI Memecoin Battle Royale",
-    description:
-      "4 Rounds. 2.7M POL. Unlimited Potential. Join the ultimate AI-powered memecoin competition on Polygon.",
-    url: "https://polygon.gitcoin.co",
-    siteName: "AI Memecoin Battle Royale",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: BASE_URL,
+    siteName: SITE_TITLE,
     // images: [
     //   {
-    //     url: '/og-image.jpg', // You'll need to add this image to public folder
+    //     url: '/og-image.jpg',
     //     width: 1200,
     //     height: 630,
-    //     alt: 'AI Memecoin Battle Royale',
+    //     alt: 'HACK THE GRID',
     //   },
     // ],
     locale: "en_US",
@@ -34,10 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Memecoin Battle Royale",
-    description:
-      "4 Rounds. 2.7M POL. Unlimited Potential. Join the ultimate AI-powered memecoin competition on Polygon.",
-    // images: ['/og-image.jpg'], // Same image as OpenGraph
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    // images: ['/og-image.jpg'],
     creator: "@gitcoin",
     site: "@gitcoin",
   },
@@ -46,16 +49,18 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: "https://memecoin.polygon.gitcoin.co",
+    canonical: BASE_URL,
   },
   keywords: [
-    "Memecoin",
-    "Polygon",
-    "AI",
-    "Cryptocurrency",
-    "Battle Royale",
-    "POL",
-    "Competition",
+    "LUKSO",
+    "Hack The Grid",
+    "Universal Profiles",
+    "The Grid",
+    "Web3",
+    "LYX",
+    "Grants",
+    "dApps",
+    "Digital Identity",
     "Gitcoin",
   ],
   authors: [{ name: "Gitcoin" }],

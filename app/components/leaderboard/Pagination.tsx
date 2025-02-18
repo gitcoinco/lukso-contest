@@ -19,7 +19,7 @@ export function Pagination({
   onPageChange,
 }: PaginationProps) {
   return (
-    <div className="px-6 py-4 flex items-center justify-between border-t border-border">
+    <div className="px-6 py-4 flex items-center justify-between border-t border-t-[rgba(255,255,255,0.1)]">
       <div className="text-sm text-text-secondary">
         Showing {startIndex + 1} to {Math.min(endIndex, totalItems)} of{" "}
         {totalItems} entries
