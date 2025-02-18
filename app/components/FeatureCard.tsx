@@ -17,7 +17,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <div className="border-none w-[405.34px] h-[432px] p-[26px] bg-[#121212]/90 rounded-3xl shadow-lg border flex-col justify-start items-start gap-4 inline-flex overflow-hidden">
+    <div
+      key={title}
+      className="border-none max-w-[405.33px] max-h-[432px] p-[26px] bg-[#121212]/90 rounded-3xl shadow-lg border flex-col justify-start items-start xl:gap-4 inline-flex overflow-hidden mx-auto"
+    >
       <div className="text-center text-white/70 text-base font-medium leading-7">
         {title}
       </div>

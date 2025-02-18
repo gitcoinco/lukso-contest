@@ -59,7 +59,7 @@ const steps = [
 export function HowItWorks() {
   return (
     <section
-      className="py-20 p-10 relative"
+      className="py-20 md:p-10 relative items-center justify-center w-full"
       style={{
         background:
           "linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 100%)",
@@ -67,7 +67,7 @@ export function HowItWorks() {
       }}
     >
       <div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 lg:flex hidden items-center justify-center"
         style={{ zIndex: -1 }}
       >
         <Image
@@ -79,12 +79,12 @@ export function HowItWorks() {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-medium text-left mb-8 text-[#ff2975]">
+      <div className="max-w-7xl mx-auto min-w-fit md:p-0 p-3">
+        <h2 className="text-4xl font-medium text-center md:text-left mb-8 text-[#ff2975]">
           The Path to Victory
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-16 gap-6">
           {steps.map((step, index) => (
             <FeatureCard
               key={index}
