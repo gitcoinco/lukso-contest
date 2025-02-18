@@ -3,11 +3,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "../contexts/ThemeContext";
-import Button from "./Button";
-import { ArrowRight } from "lucide-react";
 import BgHero from "./media/BgHero";
 import Pill from "./Pill";
-import Image from "next/image";
 
 export default function Hero() {
   const { theme } = useTheme();
