@@ -5,12 +5,10 @@ import { useLeaderboard } from "../../hooks/useLeaderboard";
 import { WeekTabs } from "../leaderboard/WeekTabs";
 import { LeaderboardTable } from "../leaderboard/LeaderboardTable";
 import { Pagination } from "../leaderboard/Pagination";
-import { MetricsInfo } from "../leaderboard/MetricsInfo";
 import { useTheme } from "../../contexts/ThemeContext";
-import BgHero from "../media/BgHero";
-import Button from "../Button";
-import { ArrowRight } from "lucide-react";
+import Pill from "../Pill";
 
+import Image from "next/image";
 const WINNERS_COUNT = 20;
 const PAGE_SIZES = [25, 50, 100];
 const DISABLE_CURRENT_WEEK = false;
@@ -70,21 +68,22 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
         } p-10`}
       >
         {/* Background */}
-        <div
+        {/* <div
           className="absolute inset-0 flex items-center justify-center"
           style={{ margin: "0 -50px" }}
         >
           <BgHero/>
-        </div>
+        </div> */}
 
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white py-32">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-            Live Memecoin Rankings
-          </h1>
-          <p className="text-lg sm:text-xl opacity-90">
-            Track the competition. Watch the charts. Stay based.
-          </p>
+        <div className="relative z-10 mx-auto text-center text-white">
+          <Image
+            src="/brand/headerLeaderboard.svg"
+            alt="Header Leaderboard"
+            width={1440}
+            height={380}
+            style={{ width: "100%" }}
+          />
         </div>
       </div>
 
@@ -99,40 +98,24 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
                   Current Round Rankings Coming Soon
                 </h2>
                 <p className="text-lg sm:text-xl opacity-90 mb-4">
-                  The leaderboard for this round will be displayed once we have collected sufficient project data.
+                  The leaderboard for this round will be displayed once we have
+                  collected sufficient project data.
                 </p>
                 <p className="text-base opacity-75">
                   Please check back later or view previous rounds' rankings.
                 </p>
               </div>
             ) : (
-              <div className="bg-surface rounded-xl shadow-lg overflow-hidden">
-                <div
-                  className={`p-4 sm:p-6 ${
-                    theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
-                  } text-white flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4`}
-                >
+              <div className="bg-surface shadow-lg overflow-hidden">
+                <div className="flex justify-between items-center p-6 bg-[rgba(255,255,255,0.05)]">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold mb-2">
-                      Round {activeWeek} Rankings
+                      Level {activeWeek} Rankings
                     </h2>
                     {lastUpdated && (
-                      <p className="text-sm opacity-90">
-                        {activeWeek === defaultWeek ? (
-                          <>
-                            Last updated: {new Date(lastUpdated).toLocaleDateString('en-US', {
-                              day: 'numeric',
-                              month: 'short',
-                              year: 'numeric',
-                              hour: '2-digit',
-                              minute: '2-digit',
-                              second: '2-digit',
-                              hour12: true
-                            }).replace(/(\d+)(?=(st|nd|rd|th))/, '$1$2')}
-                          </>
-                        ) : (
-                          'This round has ended. Rankings are final.'
-                        )}
+                      <p className="text-sm opacity-90 font-normal">
+                        Discover the top-performing mini dApps from Hack The
+                        Grid.
                       </p>
                     )}
                   </div>
@@ -160,7 +143,11 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
 
                 <LeaderboardTable
                   loading={loading}
-                  projects={activeWeek === defaultWeek ? currentProjects : currentProjects.filter(project => project.score !== 0)}
+                  projects={
+                    activeWeek === defaultWeek
+                      ? currentProjects
+                      : currentProjects.filter((project) => project.score !== 0)
+                  }
                   metrics={metrics}
                   expandedProject={expandedProject}
                   onToggleProject={toggleProjectDetails}
@@ -179,11 +166,40 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
               </div>
             )}
 
-            <MetricsInfo
+            {/* <MetricsInfo
               week={activeWeek}
               metrics={metrics}
               winnersCount={WINNERS_COUNT}
-            />
+            /> */}
+            <div className="h-[212px] p-6 bg-white/5 rounded-xl shadow-lg flex-col justify-start items-start gap-4 inline-flex overflow-hidden mt-12">
+              <div className="self-stretch justify-start items-center gap-2 inline-flex">
+                <div className="w-5 h-5 relative"></div>
+                <div className="flex-col justify-start items-start inline-flex">
+                  <div className="text-white text-xl font-bold leading-7">
+                    How the Leaderboard Works
+                  </div>
+                </div>
+              </div>
+              <div className="self-stretch h-[120px] px-6 flex-col justify-start items-start gap-4 flex">
+                <div className="self-stretch h-[120px] flex-col justify-start items-start flex">
+                  <div className="self-stretch text-white/70 text-base font-normal leading-normal">
+                    The leaderboard updates daily and tracks mini dApps
+                    submitted to Hack The Grid. It provides a transparent view
+                    of adoption, activity, and ecosystem impact. Rankings are
+                    determined by the average performance across all five KPIs.
+                    Grant-winning projects are tagged based on their funding
+                    level, with indicators showing which have met the KPI
+                    threshold to unlock their second milestone.
+                  </div>
+                  <div className="self-stretch text-white/70 text-base font-normal leading-normal mt-4 flex gap-4">
+                    <span>🥇 Prime Grant Recipient</span>
+                    <span>🥈 Core Grant Recipient</span>
+                    <span>🥉 Origin Grant Recipient</span>
+                    <span>🚀 Milestone 2 Unlocked</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </>
       ) : (
@@ -192,7 +208,8 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
             Gathering Data
           </h2>
           <p className="text-lg sm:text-xl opacity-90 mb-4">
-            The leaderboard will be displayed once we have sufficient project data
+            The leaderboard will be displayed once we have sufficient project
+            data
           </p>
           <p className="text-base opacity-75">
             Want to participate? Apply now to join the competition!
@@ -202,11 +219,11 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
 
       {/* CTA Section */}
       <section
-        className={`py-12 sm:py-16 p-10 ${
+        className={`p-4 ${
           theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
         } mt-auto`}
       >
-        <div className="max-w-4xl mx-auto text-center text-white">
+        {/* <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-2xl sm:text-3xl font-bold mb-6">
             Ready to Join the Battle?
           </h2>
@@ -220,6 +237,10 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
               Apply Now <ArrowRight size={16} />
             </Button>
           </div>
+        </div> */}
+        <div className="flex gap-2 justify-center">
+          <Pill variant="black">Build your mini dApp</Pill>
+          <Pill variant="black">Follow LUKSO for updates</Pill>
         </div>
       </section>
     </div>

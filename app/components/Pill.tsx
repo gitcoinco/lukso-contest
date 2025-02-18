@@ -4,11 +4,11 @@ import React from 'react';
 
 interface PillProps {
   children: React.ReactNode;
-  variant?: 'default' | 'transparent' | 'dark';
+  variant?: 'default' | 'transparent' | 'dark' | 'black';
 }
 
 const Pill: React.FC<PillProps> = ({ children, variant = 'default' }) => {
-  const pillStyles: Record<'default' | 'transparent' | 'dark', React.CSSProperties> = {
+  const pillStyles: Record<'default' | 'transparent' | 'dark' | 'black', React.CSSProperties> = {
     default: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -41,10 +41,19 @@ const Pill: React.FC<PillProps> = ({ children, variant = 'default' }) => {
       borderRadius: '32.641px',
       border: '1.509px solid #FFF',
       background: '#111',
+    },
+    black: {
+      display: 'flex',
+      padding: '16px 24px',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '8px',
+      borderRadius: '32.641px',
+      background: '#111',
     }
   };
 
-  const textStyles: Record<'default' | 'transparent' | 'dark', React.CSSProperties> = {
+  const textStyles: Record<'default' | 'transparent' | 'dark' | 'black', React.CSSProperties> = {
     default: {
       fontSize: '20.07px',
       fontWeight: '400',
@@ -65,12 +74,18 @@ const Pill: React.FC<PillProps> = ({ children, variant = 'default' }) => {
     },
     dark: {
       color: '#FFF',
-      fontFamily: 'Inter',
       fontSize: '24px',
       fontStyle: 'normal',
       fontWeight: '500',
       lineHeight: 'normal',
       letterSpacing: '-0.24px',
+    },
+    black: {
+      color: '#FFF',
+      fontSize: '16px',
+      fontStyle: 'normal',
+      fontWeight: '400',
+      lineHeight: '100%'
     }
   };
 

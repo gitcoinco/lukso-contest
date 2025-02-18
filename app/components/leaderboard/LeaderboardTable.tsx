@@ -38,7 +38,7 @@ export function LeaderboardTable({
 
   // Mobile Card View
   const MobileView = () => (
-    <div className="space-y-4 p-4">
+    <div className="space-y-4 p-4 rounded-xl">
       {projects.map((project) => (
         <div
           key={project.project.tokenAddress}
@@ -124,34 +124,34 @@ export function LeaderboardTable({
     </div>
   );
 
-  // Desktop Table View remains unchanged
+  // Desktop Table View
   const DesktopView = () => (
-    <div className="overflow-x-auto">
+    <div className="overflow-hidden rounded-b-xl">
       <table className="w-full">
-        <thead className="bg-surface-secondary">
+        <thead className="bg-[#202020]">
           <tr>
             <th
-              className="px-6 py-4 text-left text-sm font-semibold text-text-secondary cursor-pointer hover:bg-opacity-80"
+              className="h-[52px] px-6 text-left text-[14px] font-semibold text-[rgba(255,255,255,0.70)] leading-5 tracking-[-0.16px] cursor-pointer hover:bg-opacity-80"
               onClick={() => onSort("rank")}
             >
               <div className="flex items-center gap-2">
-                  {"Rank"}
-                  <ArrowUpDown className="w-4 h-4" />
-                </div>
+                {"Rank"}
+                <ArrowUpDown className="w-4 h-4" />
+              </div>
             </th>
             <th
-              className="px-6 py-4 text-left text-sm font-semibold text-text-secondary cursor-pointer hover:bg-opacity-80"
+              className="h-[52px] px-6 text-left text-[14px] font-semibold text-[rgba(255,255,255,0.70)] leading-5 tracking-[-0.16px] cursor-pointer hover:bg-opacity-80"
               onClick={() => onSort("projectName")}
             >
               <div className="flex items-center gap-2">
                 {"Project"}
                 <ArrowUpDown className="w-4 h-4" />
-                </div>
+              </div>
             </th>
             {metrics.map((metric) => (
               <th
                 key={metric}
-                className="px-6 py-4 text-right text-sm font-semibold text-text-secondary cursor-pointer hover:bg-opacity-80"
+                className="h-[52px] px-6 text-right text-[14px] font-semibold text-[rgba(255,255,255,0.70)] leading-5 tracking-[-0.16px] cursor-pointer hover:bg-opacity-80"
                 onClick={() => onSort(metric)}
               >
                 <div className="flex items-center justify-end gap-2">
@@ -161,16 +161,16 @@ export function LeaderboardTable({
                 </div>
               </th>
             ))}
-            <th className="px-6 py-4 text-right text-sm font-semibold text-text-secondary">Token</th>
+            <th className="h-[52px] px-6 text-right text-[14px] font-semibold text-[rgba(255,255,255,0.70)] leading-5 tracking-[-0.16px]">Token</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-border">
+        <tbody className="divide-y divide-[rgba(255,255,255,0.1)]">
           {projects.map((project) => (
             <React.Fragment key={project.project.tokenAddress}>
               <tr
                 onClick={() => onToggleProject(project.project.tokenAddress)}
-                className={`hover:bg-surface-secondary cursor-pointer transition-colors ${
-                  project.rank <= winnersCount ? 'bg-brand/5 dark:bg-brand/10' : ''
+                className={`h-[56.5px] text-white text-[14.125px] font-medium leading-6 tracking-[-0.16px] hover:bg-surface-secondary cursor-pointer transition-colors ${
+                  project.rank <= winnersCount ? 'bg-[rgba(255,255,255,0.05)]' : 'border-t border-[rgba(255,255,255,0.1)]'
                 }`}
               >
                 <td className="px-6 py-4">
@@ -208,7 +208,7 @@ export function LeaderboardTable({
               </tr>
               {expandedProject === project.project.tokenAddress && (
                 <tr>
-                  <td colSpan={metrics.length + 3} className="bg-surface-secondary">
+                  <td colSpan={metrics.length + 3} className="bg-[rgba(255,255,255,0.05)]">
                     <ProjectDetails project={project.project} />
                   </td>
                 </tr>
@@ -222,10 +222,10 @@ export function LeaderboardTable({
 
   return (
     <>
-      <div className="md:hidden">
+      <div className="md:hidden rounded-xl">
         <MobileView />
       </div>
-      <div className="hidden md:block">
+      <div className="hidden md:block rounded-xl">
         <DesktopView />
       </div>
     </>
