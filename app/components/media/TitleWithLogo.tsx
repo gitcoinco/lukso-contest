@@ -17,13 +17,9 @@ const TitleWithLogo: React.FC<LogoProps> = ({ style }) => {
         height={53}
         priority
       />
-      <Image
-        src="/brand/title.png"
-        alt="Title"
-        width={280}
-        height={53}
-        priority
-      />
+      <div className="text-center text-white text-2xl font-bold font-['Vipnagorgialla'] leading-relaxed">
+        HACK THE GRID
+      </div>
     </div>
   );
 };

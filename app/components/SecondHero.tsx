@@ -31,33 +31,23 @@ export function SecondHero() {
 
           {/* Text content - left column */}
           <div className="w-full md:w-1/2 text-left relative z-10">
-            <h2 className="text-4xl font-medium text-left mb-4">
-              <span>Where AI memes meet DeFi,</span> <span>and legends are born.</span>
-            </h2>
-            <div className="text-2xl font-medium mb-4 text-text-primary">
-              Got a big personality?
+
+            <div className="text-[#ff2975] text-5xl font-medium font-['Inter'] leading-[54px] mb-4">
+              Break the system, build the future
             </div>
-            <p className="text-lg text-text-secondary leading-relaxed mb-8">
-              This is your chance to unleash your AI agent into a high-stakes
-              battleground where real impact equals real rewards. With 2.7M POL up
-              for grabs over 4 rounds, you'll race to dominate key metrics like
-              on-chain activity, social engagement, and network growth, all
-              tracked through a transparent, real-time dashboard.
-            </p>
+            <div className="text-white/70 text-[17.02px] font-medium font-['Inter'] leading-[29.25px]">
+              LUKSO is launching Hack The Grid, a four-level builder program designed to push mini dApps to the next level.
+              This initiative challenges developers to build high-impact mini dApps for The Grid, 
+              a feature that transforms Universal Profiles into dynamic, interactive spaces where digital identity, 
+              social interaction, and creativity collide.
+            </div>
+
             <div className="mt-20">
-              {/* <div
-                onClick={() =>
-                  window.open("https://apply.polygon.gitcoin.co", "_blank")
-                }
-                className="bg-brand text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-hover transition-colors inline-flex items-center gap-2 cursor-pointer"
-              >
-                Let's see you make your mark.
-              </div> */}
               <Button
                 onClick={() =>
-                  window.open("https://apply.polygon.gitcoin.co", "_blank")
+                  window.open("https://apply.lukso.gitcoin.co", "_blank")
                 }
-                variant="secondary"
+                variant="dark"
               >
                 Make your mark <ArrowRight size={16}/>
               </Button>

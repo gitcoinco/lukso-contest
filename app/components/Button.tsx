@@ -5,7 +5,7 @@ import React from 'react';
 interface ButtonProps {
   children: React.ReactNode;
   onClick: () => void;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'dark';
 }
 
 const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary' }) => {
@@ -35,7 +35,13 @@ const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary' 
     color: '#000000'
   };
 
-  const style = variant === 'primary' ? primaryStyle : secondaryStyle;
+  const darkStyle = {
+    ...primaryStyle,
+    background: '#000000',
+    color: '#FFFFFF'
+  };
+
+  const style = variant === 'primary' ? primaryStyle : variant === 'secondary' ? secondaryStyle : darkStyle;
 
   return (
     <button

@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Vipnagorgialla';
+  src: url('/fonts/Vipnagorgialla-Regular.woff2') format('woff2'),
+       url('/fonts/Vipnagorgialla-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

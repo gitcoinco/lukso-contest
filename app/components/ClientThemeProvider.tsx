@@ -12,7 +12,7 @@ export default function ClientThemeProvider({
 }) {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-background text-text-primary">
+      <div className="min-h-screen text-text-primary">
         <Header />
         {children}
         <Footer />

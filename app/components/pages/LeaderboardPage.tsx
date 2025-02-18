@@ -74,7 +74,7 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
           className="absolute inset-0 flex items-center justify-center"
           style={{ margin: "0 -50px" }}
         >
-          <BgHero style={{ width: "calc(100% + 100px)" }} />
+          <BgHero/>
         </div>
 
         {/* Content */}
