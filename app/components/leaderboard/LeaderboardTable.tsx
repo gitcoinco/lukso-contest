@@ -54,19 +54,13 @@ export function LeaderboardTable({
           {/* Header with Rank and Name */}
           <div className="p-4">
             <div className="flex items-center justify-between mb-2">
-              {/* <div className="flex items-center gap-3">
-                <span
-                  className={`text-lg ${project.rank <= 3 ? "font-bold" : ""}`}
-                >
-                  {project.rank === 1 && "👑 "}
-                  {project.rank === 2 && "🥈 "}
-                  {project.rank === 3 && "🥉 "}#{project.rank}
-                </span>
+              <div className="flex items-center gap-3">
+            
                 <span className="font-medium">
-                  {project.project.name} (${project.project.symbol})
+                  {project.project.name} 
                 </span>
-              </div> */}
-              <button
+              </div>
+              {/* <button
                 onClick={() => onToggleProject(project.project.tokenAddress)}
                 className="text-text-secondary"
               >
@@ -75,7 +69,7 @@ export function LeaderboardTable({
                 ) : (
                   <ChevronDown className="w-5 h-5" />
                 )}
-              </button>
+              </button> */}
             </div>
 
             {/* Description (shown when expanded) */}
@@ -188,13 +182,13 @@ export function LeaderboardTable({
                 <td className="px-6 py-4 font-medium">
                   <div className="flex items-center gap-2">
                     <span>
-                      {project.project.name} (${project.project.symbol})
+                      {project.project.name}
                     </span>
-                    {expandedProject === project.project.tokenAddress ? (
+                    {/* {expandedProject === project.project.tokenAddress ? (
                       <ChevronUp className="w-4 h-4 text-text-secondary" />
                     ) : (
                       <ChevronDown className="w-4 h-4 text-text-secondary" />
-                    )}
+                    )} */}
                   </div>
                 </td>
                 {metrics.map((metric) => (
