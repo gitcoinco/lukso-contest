@@ -77,6 +77,8 @@ export function useLeaderboard(week: number) {
         });
         setProjects(projects);
 
+        setLastUpdated(json.lastUpdated);
+
 
 
       } catch (err) {

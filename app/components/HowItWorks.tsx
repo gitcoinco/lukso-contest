@@ -11,46 +11,60 @@ const steps = [
     title: "Get Started",
     description: [
       <div>
-        Before you dive in, make sure you have everything you need. Start by
-        reading our{" "}
+        Leverage The Grid’s infrastructure, {" "}
         <a
           className="underline"
-          href="https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a"
+          href="https://universaleverything.io/"
           target="_blank"
         >
-          guide
-        </a>{" "}
-        and downloading the{" "}
+          Universal Profiles
+        </a> {" "}
+        (UPs), and LUKSO’s user-centered {" "}
         <a
           className="underline"
-          href="https://chromewebstore.google.com/detail/universal-profiles/abpickdkkbnbcoepogfhkhennhfhehfn"
+          href="https://lukso.network/developer"
           target="_blank"
         >
-          Universal Profile Browser Extension
+          smart contract standards
         </a>{" "}
-        to unlock full functionality on The Grid.
+        (LSPs) to create next-gen dApps that seamlessly blend web2 and web3.
+        <span className="font-bold">Find inspiration and all resources to start building {" "}
+          <a
+            className="underline"
+            href="https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a"
+            target="_blank"
+          >
+            here
+          </a>{" "}
+          .
+        </span>
       </div>,
     ],
   },
   {
     icon: FlaskConical,
-    title: "Build on the grid",
+    title: "Levels 1-3",
     description: [
       <div>
-        Hack The Grid is all about pushing the boundaries of digital identity
-        and creativity. Experiment, innovate, and bring your vision to
-        life—there are no constraints, just endless possibilities.
+        Join at any level or participate in all! 
+        Each level offers   <span className="font-bold"> resources, office hours, and support channels</span>
+         to help teams deploy fully functional mini dApps on LUKSO Mainnet. 
+         In every level, <span className="font-bold">$42,000 in LYX</span> is available across three grant tiers:
+         <br/> <br/>
+         🥇🥇 <span className="font-bold">Prime Grants</span> – 2 x <span className="font-bold">$9,000</span> in LYX
+         <br/>
+         🥈🥈🥈 <span className="font-bold">Core Grants</span> – 3 x <span className="font-bold">$5,000</span> in LYX
+         <br/>
+         🥉🥉🥉🥉 <span className="font-bold">Origin Grants</span> – 4 x <span className="font-bold">$2,250</span> in LYX
       </div>,
     ],
   },
   {
     icon: Trophy,
-    title: "Secure the W",
+    title: "Level 4",
     description: [
       <div>
-        Once your project is ready, submit it for a chance to earn funding and
-        recognition. Each round rewards the top 20 projects, so bring your
-        A-game!
+        Winning projects from Levels 1–3 will qualify for Level 4, <span className="font-bold">the Community Grants Round</span>. Here, an additional <span className="font-bold">$24,000 in LYX</span> will be distributed via <span className="font-bold">quadratic funding on Gitcoin</span>, allowing the community to decide how funds are allocated among finalists.
       </div>,
     ],
   },
@@ -59,32 +73,17 @@ const steps = [
 export function HowItWorks() {
   return (
     <section
-      className="py-20 md:p-10 relative items-center justify-center w-full"
-      style={{
-        background:
-          "linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 100%)",
-        borderTop: "1px solid rgba(255, 255, 255, 0.06)",
-      }}
+      className="py-20 md:p-10 relative items-center justify-center w-full bg-[url(/brand/background.svg)]"
+    //bg-[url(/brand/background.svg)]
     >
-      <div
-        className="absolute inset-0 lg:flex hidden items-center justify-center"
-        style={{ zIndex: -1 }}
-      >
-        <Image
-          src="/brand/bgHowItWorks.svg"
-          alt="How it works background"
-          width={1441}
-          height={312}
-          priority
-        />
-      </div>
+
 
       <div className="max-w-7xl mx-auto min-w-fit md:p-0 p-3">
         <h2 className="text-4xl font-medium text-center md:text-left mb-8 text-[#ff2975]">
           The Path to Victory
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:gap-16 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 xl:gap-16 gap-6">
           {steps.map((step, index) => (
             <FeatureCard
               key={index}

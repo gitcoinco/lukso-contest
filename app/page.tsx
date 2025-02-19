@@ -7,7 +7,7 @@ import Header from "./components/Header";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-grow">
+    <div className="flex flex-col flex-grow  bg-[#121212]">
       <Header />
       <Hero />
       <SecondHero />
