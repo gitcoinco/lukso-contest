@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Logo from "./media/Logo";
 import Button from "./Button";
 import BgRight from "./media/BgRight";
+import Link from "next/link";
 
 export function SecondHero() {
   const { theme } = useTheme();
@@ -19,58 +20,64 @@ export function SecondHero() {
         borderTop: "1px solid rgba(255, 255, 255, 0.06)",
       }}
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Background for mobile only */}
-          <div className="absolute inset-0 md:hidden">
-            <BgRight
-              style={{
-                width: "100%",
-                height: "100%",
-                opacity: 0.1,
-              }}
-            />
+
+      <div className="md:px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <div className="text-4xl lg:text-5xl " >
+            Rethink what's possible. <br />Build next-gen mini dApps.
           </div>
 
-          {/* Text content - left column */}
-          <div className="w-full md:w-1/2 text-left relative z-10">
-            <div className="text-[#ff2975] text-5xl font-medium leading-[54px] mb-4">
-              Break the system, build the future
-            </div>
-            <div className="text-white/70 text-[17.02px] font-medium leading-[29.25px]">
-              LUKSO is launching Hack The Grid, a four-level builder program
-              designed to push mini dApps to the next level. This initiative
-              challenges developers to build high-impact mini dApps for The
-              Grid, a feature that transforms Universal Profiles into dynamic,
-              interactive spaces where digital identity, social interaction, and
-              creativity collide.
-            </div>
+          <div className="text-md text-white text-opacity-70 font-inter mt-4 font-extralight">
+            Hack The Grid is a 4-Level builder program by {' '}
+             <span className="underline-offset-4 underline">
+              <Link href="https://x.com/lukso_io" passHref legacyBehavior>
+                <a target="_blank">
+                  LUKSO
+                </a>
+              </Link>
+            </span>
+            , designed to push mini
+            dApps to the next level. It’s your chance to experiment with {' '}
+            <span className="font-bold">AI agents, social DeFi,
+            creator monetization, gamification</span>
+            , or something entirely new. {' '}
 
-            <div className="mt-20">
+
+            <span className="underline-offset-4 underline">
+              <Link href="https://medium.com/lukso/the-grid-transforming-your-profile-into-a-digital-powerhouse-00b0e67cba81" passHref legacyBehavior>
+                <a target="_blank">
+                  The Grid
+                </a>
+              </Link>
+            </span>
+              
+            {' '} opens up
+            new possibilities for builders, turning Universal Profiles into dynamic, interactive
+            spaces where digital identity, social interaction, and creativity collide.
+          </div>
+
+          <div className="mt-20">
               <Button
                 onClick={() =>
                   window.open("https://apply.lukso.gitcoin.co", "_blank")
                 }
                 variant="dark"
               >
-                Make your mark <ArrowRight size={16} />
+                Start Building <ArrowRight size={16} />
               </Button>
             </div>
-          </div>
 
-          {/* Background image - visible only on desktop */}
-          <div className="hidden md:flex w-full md:w-1/2 relative h-[500px] items-center justify-end">
-            <BgRight
-              style={{
-                width: "80%",
-                height: "auto",
-                position: "absolute",
-                right: "-50px",
-                transform: "translateY(-50%)",
-                top: "50%",
-              }}
-            />
-          </div>
+
+        </div>
+
+        <div className="p-2 w-full h-full flex items-center justify-center">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/xWJo0OfOpTw"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
       </div>
     </section>
