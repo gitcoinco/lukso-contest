@@ -7,6 +7,35 @@ interface MetricData {
   [key: string]: string | number;
 }
 
+export const metricsMap = [
+  {
+    displayName: "Unique User Views",
+    metricName: "Show Visitors",
+    description: "The number of unique users who have viewed the project."
+  },
+  {
+    displayName: "Unique dApp Installs on The Grid",
+    metricName: "Add Visitors",
+    description: "The number of unique users who have installed the project on The Grid."
+  },
+  {
+    displayName: "Unique User Interactions",
+    metricName: "Transactions Visitor",
+    description: "The number of unique users who have interacted with the project."
+  },
+  {
+    displayName: "Total User Interactions",
+    metricName: "Transaction Events",
+    description: "The total number of interactions with the project."
+  },
+  {
+    displayName: "Total Universal Profile Followers",
+    metricName: "Followers",
+    description: "The total number of followers of the project's universal profile."
+  }
+]
+
+
 export function useLeaderboard(week: number) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,7 +66,7 @@ export function useLeaderboard(week: number) {
         const headers = Object.keys(metrics[0]);
         
         const filteredHeaders = headers.filter(
-          (header) => header !== "UP" && header !== "Project" && header !== "Level"
+          (header) => metricsMap.some(metric => metric.metricName === header)
         );
 
         setMetrics(filteredHeaders);

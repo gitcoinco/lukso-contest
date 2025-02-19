@@ -28,3 +28,37 @@ export const weeks = [
         ? "active"
         : "upcoming",
 }));
+
+
+
+export const metricsMap = [
+  {
+    displayName: "Unique User Views",
+    metricName: "Show Visitors",
+    description: "The number of unique users who have viewed the project."
+  },
+  {
+    displayName: "Unique dApp Installs on The Grid",
+    metricName: "Add Visitors",
+    description: "The number of unique users who have installed the project on The Grid."
+  },
+  {
+    displayName: "Unique User Interactions",
+    metricName: "Transactions Visitor",
+    description: "The number of unique users who have interacted with the project."
+  },
+  {
+    displayName: "Total User Interactions",
+    metricName: "Transaction Events",
+    description: "The total number of interactions with the project."
+  },
+  {
+    displayName: "Total Universal Profile Followers",
+    metricName: "Followers",
+    description: "The total number of followers of the project's universal profile."
+  }
+]
+
+
+
+

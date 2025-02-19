@@ -35,7 +35,7 @@ export function WeekTabs({ activeWeek, onWeekChange }: WeekTabsProps) {
                 disabled={isUpcoming}
               >
                 <div className="w-2 h-2 rounded-full bg-[#D1D5DB]" />
-                <span>Level {week.id}</span>
+                <span>Level {week.id} {week.id > activeWeek ? "[locked for now]" : ""}</span>
               </button>
             );
           })}
