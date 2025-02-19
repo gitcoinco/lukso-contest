@@ -223,21 +223,6 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
           theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
         } mt-auto`}
       >
-        {/* <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-6">
-            Ready to Join the Battle?
-          </h2>
-          <div className="flex justify-center items-center">
-            <Button
-              onClick={() =>
-                window.open("https://apply.polygon.gitcoin.co", "_blank")
-              }
-              variant="secondary"
-            >
-              Apply Now <ArrowRight size={16} />
-            </Button>
-          </div>
-        </div> */}
         <div className="flex gap-2 justify-center">
           <Pill variant="black">Build your mini dApp</Pill>
           <Pill variant="black">Follow LUKSO for updates</Pill>

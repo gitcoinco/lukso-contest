@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import {  RankedProject } from "../types/leaderboard";
+import { metricsMap } from "../constants/weeks";
 
 
 interface MetricData {
@@ -7,33 +8,6 @@ interface MetricData {
   [key: string]: string | number;
 }
 
-export const metricsMap = [
-  {
-    displayName: "Unique User Views",
-    metricName: "Show Visitors",
-    description: "The number of unique users who have viewed the project."
-  },
-  {
-    displayName: "Unique dApp Installs on The Grid",
-    metricName: "Add Visitors",
-    description: "The number of unique users who have installed the project on The Grid."
-  },
-  {
-    displayName: "Unique User Interactions",
-    metricName: "Transactions Visitor",
-    description: "The number of unique users who have interacted with the project."
-  },
-  {
-    displayName: "Total User Interactions",
-    metricName: "Transaction Events",
-    description: "The total number of interactions with the project."
-  },
-  {
-    displayName: "Total Universal Profile Followers",
-    metricName: "Followers",
-    description: "The total number of followers of the project's universal profile."
-  }
-]
 
 
 export function useLeaderboard(week: number) {
@@ -60,19 +34,28 @@ export function useLeaderboard(week: number) {
 
         const json = await response.json();
         const metrics = json.data;
-
         // console.log("data: ", metrics);
-
-        const headers = Object.keys(metrics[0]);
         
+        // grab the keys from the first item in the spreadsheet
+        const headers = Object.keys(metrics[0]);
+        // we only care about the metrics defined in the metrics map
         const filteredHeaders = headers.filter(
           (header) => metricsMap.some(metric => metric.metricName === header)
         );
-
         setMetrics(filteredHeaders);
         setMetricKeys(filteredHeaders);
-
         // console.log("headers: ", headers);
+        
+
+        // we need to zero out any missing or empty values of the metrics we care about
+        metrics.forEach((metric: MetricData) => {
+          filteredHeaders.forEach((header) => {
+            if (!metric[header]) {
+              metric[header] = 0;
+            }
+          });
+        });
+
 
         const projects: RankedProject[] = [];
 

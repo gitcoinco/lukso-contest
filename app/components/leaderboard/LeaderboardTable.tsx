@@ -119,18 +119,7 @@ export function LeaderboardTable({
                 </div>
               </div>
             ))}
-            {/* <div className="text-sm col-span-2">
-              <div className="text-text-secondary">Token</div>
-              <a
-                href={`https://polygonscan.com/token/${project.project.tokenAddress}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand hover:opacity-80 transition-opacity inline-flex items-center gap-1 font-mono"
-              >
-                {formatAddress(project.project.tokenAddress)}
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div> */}
+         
           </div>
         </div>
       ))}
@@ -213,17 +202,7 @@ export function LeaderboardTable({
                     {formatMetricValue(project.metrics[metric], metric)}
                   </td>
                 ))}
-                {/* <td className="px-6 py-4 text-right font-mono text-sm">
-                  <a
-                    href={`https://polygonscan.com/token/${project.project.tokenAddress}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand hover:opacity-80 transition-opacity"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    {formatAddress(project.project.tokenAddress)}
-                  </a>
-                </td> */}
+    
               </tr>
               {expandedProject === project.project.tokenAddress && (
                 <tr>
