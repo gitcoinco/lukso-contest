@@ -35,32 +35,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
       </div>
 
       {/* Contract Info */}
-      <div className="flex flex-col gap-2 text-xs text-text-secondary">
-        <div className="flex items-center gap-2">
-          <span>Token:</span>
-          <a
-            href={`https://polygonscan.com/token/${project.tokenAddress}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-brand hover:opacity-80 transition-opacity flex items-center gap-1"
-          >
-            {`${project.tokenAddress.slice(0, 6)}...${project.tokenAddress.slice(-4)}`}
-            <ExternalLink className="w-3 h-3" />
-          </a>
-        </div>
-        <div className="flex items-center gap-2">
-          <span>Deployer:</span>
-          <a
-            href={`https://polygonscan.com/address/${project.deployerWallet}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-brand hover:opacity-80 transition-opacity flex items-center gap-1"
-          >
-            {`${project.deployerWallet.slice(0, 6)}...${project.deployerWallet.slice(-4)}`}
-            <ExternalLink className="w-3 h-3" />
-          </a>
-        </div>
-      </div>
+
     </div>
   );
 }

@@ -19,12 +19,12 @@ export default function Footer() {
           <div className="text-sm">
             © 2025{" "}
             <a
-              href="https://polygon.technology"
+              href="https://lukso.network/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
             >
-              Polygon
+              Lukso
             </a>{" "}
             &{" "}
             <a
