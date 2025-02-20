@@ -64,6 +64,11 @@ export function LeaderboardTable({
                 <span className="font-medium">
                   {project.project.name} 
                 </span>
+                <span>
+                      {project.metrics['Awards'] == 1 && "🥇 "}
+                      {project.metrics['Awards'] == 2 && "🥈 "}
+                      {project.metrics['Awards'] == 3 && "🥉 "}
+                    </span> 
               </div>
               {/* <button
                 onClick={() => onToggleProject(project.project.tokenAddress)}
@@ -222,6 +227,12 @@ export function LeaderboardTable({
                       />
                     )}
                     <span>{project.project.name}</span>
+      
+                    <span>
+                      {project.metrics['Awards'] == 1 && "🥇 "}
+                      {project.metrics['Awards'] == 2 && "🥈 "}
+                      {project.metrics['Awards'] == 3 && "🥉 "}
+                    </span> 
                     {expandedProject === project.project.tokenAddress ? (
                       <ChevronUp className="w-4 h-4 text-text-secondary" />
                     ) : (
