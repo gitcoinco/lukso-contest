@@ -18,10 +18,11 @@ export function parseProjectsCSV(data: string[][]): Map<string, Project> {
     const project: Project = {
       tokenAddress,
       name: row[headers.indexOf("name")],
-      symbol: row[headers.indexOf("symbol")],
-      twitter: formatTwitterUrl(row[headers.indexOf("twitter")]),
-      description: row[headers.indexOf("description")],
-      deployerWallet: row[headers.indexOf("deployerWallet")],
+      // symbol: row[headers.indexOf("symbol")],
+      // twitter: formatTwitterUrl(row[headers.indexOf("twitter")]),
+      // description: row[headers.indexOf("description")],
+      // deployerWallet: row[headers.indexOf("deployerWallet")],
+      data: JSON.parse(row[headers.indexOf("Profile Information")]),
     };
 
     projects.set(tokenAddress, project);

@@ -2,11 +2,7 @@
 export interface Project {
   tokenAddress: string;
   name: string;
-  symbol: string;
-  twitter?: string;
-  website?: string;
-  description?: string;
-  deployerWallet: string;
+  data: ProfileData;
 }
 
 // Dynamic metrics interface
@@ -22,3 +18,25 @@ export interface RankedProject {
   project: Project;
   metrics: WeekMetrics;
 }
+
+type VerifiedImage = {
+  width: number;
+  src: string;
+  verified: "VERIFIED";
+};
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+type ProfileData = {
+  backgroundImages: VerifiedImage[];
+  profileImages: VerifiedImage[];
+  fullName: string;
+  description: string;
+  links: Link[];
+  tags: string[];
+  name: string;
+  id: string;
+};
