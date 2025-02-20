@@ -6,9 +6,9 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { RankedProject } from "../../types/leaderboard";
-import { ProjectDetails } from "./ProjectDetails";
 import { formatMetricName, formatMetricValue } from "../../utils/formatters";
 import IconWithTooltip from "../IconWithTooltip";
+import {ProfileIcon} from "../ProfileIcon";
 
 interface LeaderboardTableProps {
   loading: boolean;
@@ -33,8 +33,6 @@ export function LeaderboardTable({
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
-  console.log(projects);
-
   if (loading) {
     return (
       <div className="p-12 text-center text-text-secondary">
@@ -57,7 +55,11 @@ export function LeaderboardTable({
           <div className="p-4">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-3">
-            
+                {project.project.data.profileImages?.[0]?.src && (
+                  <ProfileIcon 
+                    imageUrl={`${project.project.data.profileImages[0].src}&width=32&dpr=2`}
+                  />
+                )}
                 <span className="font-medium">
                   {project.project.name} 
                 </span>
@@ -117,7 +119,9 @@ export function LeaderboardTable({
                 <div className="text-xs text-text-secondary">
                   <span className="mr-1">ID:</span>
                   <a
-                    href="#" // URL will be set externally
+                    href={`https://universaleverything.io/${project.project.data.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-brand hover:opacity-80 transition-opacity font-mono"
                   >
                     {project.project.data.id}
@@ -210,6 +214,11 @@ export function LeaderboardTable({
                 </td> */}
                 <td className="px-6 py-4 font-medium">
                   <div className="flex items-center gap-2">
+                    {project.project.data.profileImages?.[0]?.src && (
+                      <ProfileIcon 
+                        imageUrl={`${project.project.data.profileImages[0].src}&width=24&dpr=2`}
+                      />
+                    )}
                     <span>{project.project.name}</span>
                     {expandedProject === project.project.tokenAddress ? (
                       <ChevronUp className="w-4 h-4 text-text-secondary" />
@@ -254,7 +263,9 @@ export function LeaderboardTable({
                       <div className="text-[14px] text-text-secondary">
                         <span className="mr-1">ID:</span>
                         <a
-                          href="#"
+                          href={`https://universaleverything.io/${project.project.data.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-brand hover:opacity-80 transition-opacity font-mono"
                         >
                           {project.project.data.id}
