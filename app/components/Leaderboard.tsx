@@ -66,7 +66,7 @@ export function Leaderboard() {
 
           <Button
             onClick={() =>
-              window.open("https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a", "_blank")
+              window.open("https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a ", "_blank")
             }
             variant="dark"
           >

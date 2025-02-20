@@ -9,6 +9,7 @@ import { RankedProject } from "../../types/leaderboard";
 import { formatMetricName, formatMetricValue } from "../../utils/formatters";
 import IconWithTooltip from "../IconWithTooltip";
 import {ProfileIcon} from "../ProfileIcon";
+import { getMetricDescription, getMetricDisplayname } from "@/app/constants/weeks";
 
 interface LeaderboardTableProps {
   loading: boolean;
@@ -63,6 +64,11 @@ export function LeaderboardTable({
                 <span className="font-medium">
                   {project.project.name} 
                 </span>
+                <span>
+                      {project.metrics['Awards'] == 1 && "🥇 "}
+                      {project.metrics['Awards'] == 2 && "🥈 "}
+                      {project.metrics['Awards'] == 3 && "🥉 "}
+                    </span> 
               </div>
               {/* <button
                 onClick={() => onToggleProject(project.project.tokenAddress)}
@@ -137,9 +143,9 @@ export function LeaderboardTable({
             {metrics.map((metric) => (
               <div key={metric} className="text-sm">
                 <div className="text-text-secondary">
-                  {formatMetricName(metric)}
+                  {getMetricDisplayname(metric)}
                   <span className="pl-1">
-                    <IconWithTooltip text={metric} />
+                    <IconWithTooltip text={getMetricDescription(metric)} />
                   </span>
                 </div>
                 <div className="font-medium">
@@ -185,8 +191,8 @@ export function LeaderboardTable({
                 onClick={() => onSort(metric)}
               >
                 <div className="flex items-center justify-end gap-2">
-                  {formatMetricName(metric)}
-                  <IconWithTooltip text={metric} />
+                  {getMetricDisplayname(metric)}
+                  <IconWithTooltip text={getMetricDescription(metric)} />
                   <ArrowUpDown className="w-4 h-4" />
                 </div>
               </th>
@@ -221,6 +227,12 @@ export function LeaderboardTable({
                       />
                     )}
                     <span>{project.project.name}</span>
+      
+                    <span>
+                      {project.metrics['Awards'] == 1 && "🥇 "}
+                      {project.metrics['Awards'] == 2 && "🥈 "}
+                      {project.metrics['Awards'] == 3 && "🥉 "}
+                    </span> 
                     {expandedProject === project.project.tokenAddress ? (
                       <ChevronUp className="w-4 h-4 text-text-secondary" />
                     ) : (
