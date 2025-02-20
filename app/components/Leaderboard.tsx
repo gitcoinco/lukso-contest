@@ -10,7 +10,7 @@ export function Leaderboard() {
   const router = useRouter();
 
   return (
-    <section className="relative py-20 p-10 overflow-hidden" id="leaderboard">
+    <section className="relative py-24 px-20 overflow-hidden" id="leaderboard">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-8">
         <h2 className="text-5xl text-white font-medium text-center">
           Milestones & The Grid Rankings
@@ -25,7 +25,7 @@ export function Leaderboard() {
 
 
 
-            <div className="bg-surface p-6 rounded-lg shadow-md">
+            <div className="bg-surface p-6 rounded-xl shadow-md">
               <div className="text-brand font-medium text-2xl mb-2 pt-6">
                 Two-Step Milestones
               </div>
@@ -36,7 +36,7 @@ export function Leaderboard() {
                 adoption — designed to be achievable within four weeks after receiving the initial payout.
               </p>
             </div>
-            <div className="bg-surface p-6 rounded-lg shadow-md">
+            <div className="bg-surface p-6 rounded-xl shadow-md">
               <div className="text-brand font-medium text-2xl mb-2 pt-6">
                 The Grid Rankings
               </div>
@@ -46,7 +46,7 @@ export function Leaderboard() {
                   All working dApp submissions for <span className="font-bold">Hack The Grid</span> are included — whether a project won a grant or not.
               </p>
             </div>
-            <div className="bg-surface p-6 rounded-lg shadow-md">
+            <div className="bg-surface p-6 rounded-xl shadow-md">
               <div className="text-brand font-medium text-2xl mb-2 pt-6">
                 Transparent Progress
               </div>

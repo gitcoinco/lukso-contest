@@ -53,7 +53,7 @@ export const prizes = [
 
 export function PrizesSection() {
   return (
-    <section className="py-8 md:px-12 ">
+    <section className="py-24 px-20 ">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-4">
           <div className="text-white text-5xl font-medium leading-10">

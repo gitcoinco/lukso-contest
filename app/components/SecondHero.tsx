@@ -13,7 +13,7 @@ export function SecondHero() {
 
   return (
     <section
-      className="py-20 p-10"
+      className="py-24 p-20"
       style={{
         background:
           "linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 100%)",
