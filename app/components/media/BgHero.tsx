@@ -10,7 +10,7 @@ interface LogoProps {
 const BgHero: React.FC<LogoProps> = ({ style }) => {
   return (
     <Image
-      src="/brand/welcomeHeroBg.png"
+      src="/brand/welcomeHeroBg.svg"
       alt="Hero background"
       width={1441}
       height={312}
