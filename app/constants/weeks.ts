@@ -33,32 +33,42 @@ export const weeks = [
 
 export const metricsMap = [
   {
-    displayName: "Unique User Views",
+    displayName: "Views",
     metricName: "Show Visitors",
-    description: "The number of unique users who have viewed the project."
+    description: "Number of unique user impressions of the dApp"
   },
   {
-    displayName: "Unique dApp Installs on The Grid",
+    displayName: "Grid Installs",
     metricName: "Add Visitors",
-    description: "The number of unique users who have installed the project on The Grid."
+    description: "Number of unique users that installed the dApp on their Grid"
   },
   {
-    displayName: "Unique User Interactions",
+    displayName: "Unique Interactions",
     metricName: "Transactions Visitor",
-    description: "The number of unique users who have interacted with the project."
+    description: "Number of unique user transactions"
   },
   {
-    displayName: "Total User Interactions",
+    displayName: "Total Interactions",
     metricName: "Transaction Events",
-    description: "The total number of interactions with the project."
+    description: "Number of total user transactions"
   },
   {
-    displayName: "Total Universal Profile Followers",
+    displayName: "UP Followers",
     metricName: "Followers",
-    description: "The total number of followers of the project's universal profile."
+    description: "Number of total Universal Profile followers"
   }
 ]
 
+
+export function getMetricDisplayname(metricName: string) {
+  const metric = metricsMap.find(metric => metric.metricName === metricName)
+  return metric ? metric.displayName : metricName
+}
+
+export function getMetricDescription(metricName: string) {
+  const metric = metricsMap.find(metric => metric.metricName === metricName)
+  return metric ? metric.description : ""
+}
 
 
 
