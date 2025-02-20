@@ -75,29 +75,56 @@ export function LeaderboardTable({
             </div>
 
             {/* Description (shown when expanded) */}
-            {expandedProject === project.project.tokenAddress &&
-              project.project.description && (
-                <div className="mt-2 mb-4">
-                  <p className="text-sm text-text-secondary">
-                    {project.project.description}
-                  </p>
+            {expandedProject === project.project.tokenAddress && (
+              <div className="mt-2 mb-4 space-y-3">
+                <p className="text-sm text-text-secondary">
+                  {project.project.data.description}
+                </p>
 
-                  {/* Social Links */}
-                  <div className="flex flex-wrap gap-3 mt-3">
-                    {project.project.twitter && (
+                {/* Tags */}
+                {project.project.data.tags && project.project.data.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {project.project.data.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-full bg-surface-secondary text-text-secondary"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Social Links */}
+                {project.project.data.links && project.project.data.links.length > 0 && (
+                  <div className="flex flex-wrap gap-3">
+                    {project.project.data.links.map((link) => (
                       <a
-                        href={project.project.twitter}
+                        key={link.url}
+                        href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#1DA1F2] hover:opacity-80 transition-opacity inline-flex items-center gap-1 text-sm"
+                        className="text-brand hover:opacity-80 transition-opacity inline-flex items-center gap-1 text-sm"
                       >
-                        Twitter
+                        {link.title}
                         <ExternalLink className="w-3 h-3" />
                       </a>
-                    )}
+                    ))}
                   </div>
+                )}
+
+                {/* Project ID */}
+                <div className="text-xs text-text-secondary">
+                  <span className="mr-1">ID:</span>
+                  <a
+                    href="#" // URL will be set externally
+                    className="text-brand hover:opacity-80 transition-opacity font-mono"
+                  >
+                    {project.project.data.id}
+                  </a>
                 </div>
-              )}
+              </div>
+            )}
           </div>
 
           {/* Metrics */}
@@ -183,14 +210,12 @@ export function LeaderboardTable({
                 </td> */}
                 <td className="px-6 py-4 font-medium">
                   <div className="flex items-center gap-2">
-                    <span>
-                      {project.project.name}
-                    </span>
-                    {/* {expandedProject === project.project.tokenAddress ? (
+                    <span>{project.project.name}</span>
+                    {expandedProject === project.project.tokenAddress ? (
                       <ChevronUp className="w-4 h-4 text-text-secondary" />
                     ) : (
                       <ChevronDown className="w-4 h-4 text-text-secondary" />
-                    )} */}
+                    )}
                   </div>
                 </td>
                 {metrics.map((metric) => (
@@ -198,15 +223,61 @@ export function LeaderboardTable({
                     {formatMetricValue(project.metrics[metric], metric)}
                   </td>
                 ))}
-    
               </tr>
               {expandedProject === project.project.tokenAddress && (
                 <tr>
-                  <td
-                    colSpan={metrics.length + 3}
-                    className="bg-[rgba(255,255,255,0.05)]"
-                  >
-                    <ProjectDetails project={project.project} />
+                  <td colSpan={metrics.length + 1} className="bg-[rgba(255,255,255,0.05)] px-6 py-4">
+                    <div className="space-y-4">
+                      <p className="text-[14px] leading-[20px] text-text-secondary">
+                        {project.project.data.description}
+                      </p>
+
+                      {/* Social Links */}
+                      {project.project.data.links && project.project.data.links.length > 0 && (
+                        <div className="flex flex-wrap gap-3">
+                          {project.project.data.links.map((link) => (
+                            <a
+                              key={link.url}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-brand hover:opacity-80 transition-opacity inline-flex items-center gap-1 text-[14px]"
+                            >
+                              {link.title}
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Project ID */}
+                      <div className="text-[14px] text-text-secondary">
+                        <span className="mr-1">ID:</span>
+                        <a
+                          href="#"
+                          className="text-brand hover:opacity-80 transition-opacity font-mono"
+                        >
+                          {project.project.data.id}
+                        </a>
+                      </div>
+
+                      {/* Tags with label */}
+                      {project.project.data.tags && project.project.data.tags.length > 0 && (
+                        <div className="flex items-center gap-2">
+                          <span className="text-[14px] text-text-secondary">Tags:</span>
+                          <div className="flex flex-wrap gap-2">
+                            {project.project.data.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-1 text-[12px] rounded-full bg-surface-secondary text-text-secondary"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </td>
                 </tr>
               )}
