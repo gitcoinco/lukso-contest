@@ -37,7 +37,7 @@ export function SecondHero() {
               </Link>
             </span>
             , designed to push mini
-            dApps to the next level. It’s your chance to experiment with {' '}
+            dApps to the next level. It's your chance to experiment with {' '}
             <span className="font-bold">AI agents, social DeFi,
             creator monetization, gamification</span>
             , or something entirely new. {' '}
@@ -71,13 +71,15 @@ export function SecondHero() {
         </div>
 
         <div className="p-2 w-full h-full flex items-center justify-center">
-          <iframe
-            className="w-full h-full"
-            src="https://www.youtube.com/embed/xWJo0OfOpTw"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <div className="w-[600px] aspect-video">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/xWJo0OfOpTw?showinfo=0&rel=0"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
       </div>
     </section>
