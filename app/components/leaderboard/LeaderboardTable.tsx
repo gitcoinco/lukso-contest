@@ -122,9 +122,10 @@ export function LeaderboardTable({
                     href={`https://universaleverything.io/${project.project.data.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand hover:opacity-80 transition-opacity font-mono"
+                    className="text-brand hover:opacity-80 transition-opacity font-mono inline-flex items-center gap-1"
                   >
                     {project.project.data.id}
+                    <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>
@@ -266,9 +267,10 @@ export function LeaderboardTable({
                           href={`https://universaleverything.io/${project.project.data.id}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-brand hover:opacity-80 transition-opacity font-mono"
+                          className="text-brand hover:opacity-80 transition-opacity font-mono inline-flex items-center gap-1"
                         >
                           {project.project.data.id}
+                          <ExternalLink className="w-3 h-3" />
                         </a>
                       </div>
 
