@@ -33,6 +33,8 @@ export function LeaderboardTable({
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
+  console.log(projects);
+
   if (loading) {
     return (
       <div className="p-12 text-center text-text-secondary">

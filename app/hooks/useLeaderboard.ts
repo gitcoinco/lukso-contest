@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
-import {  RankedProject } from "../types/leaderboard";
+import { RankedProject } from "../types/leaderboard";
 import { metricsMap } from "../constants/weeks";
-
 
 interface MetricData {
   tokenAddress: string;
   [key: string]: string | number;
 }
-
-
 
 export function useLeaderboard(week: number) {
   const [loading, setLoading] = useState(true);
@@ -28,24 +25,21 @@ export function useLeaderboard(week: number) {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `/api?level=${week}`
-        );
+        const response = await fetch(`/api?level=${week}`);
 
         const json = await response.json();
         const metrics = json.data;
         // console.log("data: ", metrics);
-        
+
         // grab the keys from the first item in the spreadsheet
         const headers = Object.keys(metrics[0]);
         // we only care about the metrics defined in the metrics map
-        const filteredHeaders = headers.filter(
-          (header) => metricsMap.some(metric => metric.metricName === header)
+        const filteredHeaders = headers.filter((header) =>
+          metricsMap.some((metric) => metric.metricName === header)
         );
         setMetrics(filteredHeaders);
         setMetricKeys(filteredHeaders);
         // console.log("headers: ", headers);
-        
 
         // we need to zero out any missing or empty values of the metrics we care about
         metrics.forEach((metric: MetricData) => {
@@ -56,7 +50,6 @@ export function useLeaderboard(week: number) {
           });
         });
 
-
         const projects: RankedProject[] = [];
 
         metrics.map((element: any) => {
@@ -66,21 +59,13 @@ export function useLeaderboard(week: number) {
             project: {
               tokenAddress: element.UP,
               name: element.Project,
-              symbol: "",
-              twitter: "",
-              website: "",
-              description: "",
-              deployerWallet: ""
+              data: JSON.parse(element["Profile Information"]),
             },
-            metrics: element
+            metrics: element,
           });
         });
         setProjects(projects);
-
         setLastUpdated(json.lastUpdated);
-
-
-
       } catch (err) {
         setError(
           err instanceof Error ? err.message : "Failed to load leaderboard data"
@@ -132,6 +117,6 @@ export function useLeaderboard(week: number) {
     metricKeys,
     sortProjects,
     sortConfig,
-    lastUpdated
+    lastUpdated,
   };
 }
