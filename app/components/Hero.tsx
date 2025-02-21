@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <div className="relative min-h-[910px] md:h-screen flex items-center">
-      <div className="absolute inset-0 flex items-center justify-center ">
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
         <BgHero style={{ alignItems: "center" }} />
       </div>
       <div className="relative z-10 max-w-4xl mx-auto text-center text-white">

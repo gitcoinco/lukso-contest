@@ -9,6 +9,8 @@ import { useTheme } from "../../contexts/ThemeContext";
 import Pill from "../Pill";
 
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Button from "../Button";
 const WINNERS_COUNT = 20;
 const PAGE_SIZES = [25, 50, 100];
 const DISABLE_CURRENT_WEEK = false;
@@ -223,9 +225,25 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
           theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
         } mt-auto`}
       >
-        <div className="flex gap-2 justify-center">
-          <Pill variant="black">Build your mini dApp</Pill>
-          <Pill variant="black">Follow LUKSO for updates</Pill>
+        <div className="flex justify-center gap-8">
+          <Button
+            onClick={() =>
+              window.open(
+                "https://www.notion.so/fnce-foundation/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a",
+                "_blank"
+              )
+            }
+            variant="dark"
+          >
+            Build your mini dApp <ArrowRight size={16} />
+          </Button>
+
+          <Button
+            onClick={() => window.open("https://x.com/lukso_io", "_blank")}
+            variant="dark"
+          >
+            Follow LUKSO for updates <ArrowRight size={16} />
+          </Button>
         </div>
       </section>
     </div>

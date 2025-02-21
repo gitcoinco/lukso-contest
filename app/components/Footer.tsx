@@ -24,7 +24,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
             >
-              Lukso
+              LUKSO
             </a>{" "}
             &{" "}
             <a

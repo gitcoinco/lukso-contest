@@ -70,9 +70,8 @@ export function Leaderboard() {
             }
             variant="dark"
           >
-            Start Building <ArrowRight size={16} />
+            Start building <ArrowRight size={16} />
           </Button>
-
 
           <Button onClick={() => router.push("/leaderboard")} variant="dark">
             View leaderboard <ArrowRight size={16} />

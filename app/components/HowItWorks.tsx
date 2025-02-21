@@ -48,7 +48,7 @@ const steps = [
           Find inspiration and all resources to start building{" "}
           <a
             className="underline"
-            href="https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a"
+            href="https://www.notion.so/18c8d1c8a2118073b928dc8de54e5e1a?pvs=25#18c8d1c8a21180309fabde76a45d495d"
             target="_blank"
           >
             here
@@ -67,6 +67,7 @@ const steps = [
         <span className="font-bold">
           {" "}
           resources, office hours, and support channels
+          {" "}
         </span>
         to help teams deploy fully functional mini dApps on LUKSO Mainnet. In
         every level, <span className="font-bold">$42,000 in LYX</span> is

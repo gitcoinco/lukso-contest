@@ -63,7 +63,7 @@ export function SecondHero() {
                 }
                 variant="dark"
               >
-                Start Building <ArrowRight size={16} />
+                Start building <ArrowRight size={16} />
               </Button>
             </div>
 
@@ -72,7 +72,7 @@ export function SecondHero() {
 
         <div className="p-2 w-full h-full flex items-center justify-center">
           <iframe
-            className="w-full h-full"
+            className="w-full h-full rounded"
             src="https://www.youtube.com/embed/xWJo0OfOpTw"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
