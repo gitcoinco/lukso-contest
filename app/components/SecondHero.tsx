@@ -13,16 +13,15 @@ export function SecondHero() {
 
   return (
     <section
-      className="py-10 md:py-24 px-10 md:px-20"
+      className="relative py-10 md:py-24 px-10 md:px-20"
       style={{
         background:
           "linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 100%)",
         borderTop: "1px solid rgba(255, 255, 255, 0.06)",
       }}
     >
-
       <div className="md:px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div>
+        <div className="px-10 md:px-0">
           <div className="text-4xl lg:text-5xl " >
             Rethink what's possible. <br />Build next-gen mini dApps.
           </div>
@@ -37,7 +36,7 @@ export function SecondHero() {
               </Link>
             </span>
             , designed to push mini
-            dApps to the next level. It’s your chance to experiment with {' '}
+            dApps to the next level. It's your chance to experiment with {' '}
             <span className="font-bold">AI agents, social DeFi,
             creator monetization, gamification</span>
             , or something entirely new. {' '}
@@ -68,9 +67,9 @@ export function SecondHero() {
             </div>
         </div>
 
-        <div className="p-2 w-full h-full flex items-center justify-center">
+        <div className="-mx-10 px-4 md:mx-0 w-[calc(100%+5rem)] md:w-full h-full flex items-center justify-center">
           <iframe
-            className="w-full h-full rounded"
+            className="w-full aspect-video rounded"
             src="https://www.youtube.com/embed/xWJo0OfOpTw"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
