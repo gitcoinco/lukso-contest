@@ -13,7 +13,7 @@ export function SecondHero() {
 
   return (
     <section
-      className="py-24 p-20"
+      className="py-10 md:py-24 px-10 md:px-20"
       style={{
         background:
           "linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.02) 100%)",
@@ -66,8 +66,6 @@ export function SecondHero() {
                 Start building <ArrowRight size={16} />
               </Button>
             </div>
-
-
         </div>
 
         <div className="p-2 w-full h-full flex items-center justify-center">

@@ -10,7 +10,7 @@ export function Leaderboard() {
   const router = useRouter();
 
   return (
-    <section className="relative py-24 px-20 overflow-hidden" id="leaderboard">
+    <section className="py-10 md:py-24 px-10 md:px-20 relative overflow-hidden" id="leaderboard">
       <div className="relative z-10 max-w-7xl mx-auto flex flex-col gap-8">
         <h2 className="text-5xl text-white font-medium text-center">
           Milestones & The Grid Rankings
@@ -62,8 +62,7 @@ export function Leaderboard() {
           </div>
         </div>
 
-        <div className="flex justify-center gap-8">
-
+        <div className="flex flex-col md:flex-row md:justify-center md:gap-8">
           <Button
             onClick={() =>
               window.open("https://fnce-foundation.notion.site/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a ", "_blank")

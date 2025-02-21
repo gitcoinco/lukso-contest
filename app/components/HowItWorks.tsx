@@ -145,10 +145,10 @@ const steps = [
 export function HowItWorks() {
   return (
     <section
-      className="py-24 px-20 relative items-center justify-center w-full bg-[url(/brand/background.svg)]"
+      className="py-10 md:py-24 px-10 md:px-20 relative items-center justify-center w-full bg-[url(/brand/background.svg)]"
       //bg-[url(/brand/background.svg)]
     >
-      <div className="max-w-7xl mx-auto min-w-fit md:p-0 p-3">
+      <div className="max-w-7xl mx-auto min-w-fit md:p-0 py-3">
         <h2 className="text-4xl font-medium text-center md:text-left mb-12 text-[#ffffff]">
           How it works
         </h2>

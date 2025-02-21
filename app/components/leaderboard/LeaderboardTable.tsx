@@ -44,12 +44,12 @@ export function LeaderboardTable({
 
   // Mobile Card View
   const MobileView = () => (
-    <div className="space-y-4 p-4 rounded-xl">
+    <div className="space-y-4 py-4 md:px-4 rounded-xl">
       {projects.map((project) => (
         <div
           key={project.project.tokenAddress}
           className={`bg-surface rounded-lg shadow-sm overflow-hidden ${
-            project.rank <= winnersCount ? "border-l-4 border-brand" : ""
+            project.rank <= winnersCount ? "border-t-4 md:border-t-0 md:border-l-4 border-brand" : ""
           }`}
         >
           {/* Header with Rank and Name */}
@@ -139,7 +139,7 @@ export function LeaderboardTable({
           </div>
 
           {/* Metrics */}
-          <div className="p-10 pb-4 grid grid-cols-2 gap-3">
+          <div className="p-4 md:p-10 pb-4 grid md:grid-cols-2 gap-2 md:gap-3">
             {metrics.map((metric) => (
               <div key={metric} className="text-sm">
                 <div className="text-text-secondary">

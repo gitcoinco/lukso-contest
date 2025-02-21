@@ -53,10 +53,10 @@ export const prizes = [
 
 export function PrizesSection() {
   return (
-    <section className="py-24 px-20 ">
+    <section className="py-10 md:py-24 px-10 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <div className="text-white text-5xl font-medium leading-10">
+          <div className="text-white text-4xl md:text-5xl font-medium leading-10">
             Level up. Grow community. Get funded.
           </div>
           <div className="text-white/70 text-xl font-normal leading-7">
@@ -64,7 +64,7 @@ export function PrizesSection() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 mx-auto">
+        <div className="flex flex-col gap-4 mx-auto relative">
           <Image
             src="/brand/prize.svg"
             alt="Prizes"
@@ -73,8 +73,7 @@ export function PrizesSection() {
           />
         </div>
       </div>
-      <div className="mt-20 mx-auto flex justify-center">
-        
+      <div className="mt-10 md:mt-20 mx-auto flex justify-center">
         <Button
           onClick={() =>
         window.open("https://x.com/lukso_io", "_blank")

@@ -10,7 +10,7 @@ export function WeekTabs({ activeWeek, onWeekChange }: WeekTabsProps) {
   return (
     <div className="max-w-7xl mx-auto px-6 mt-8">
       <div className="flex flex-col items-start p-4 rounded-xl bg-[rgba(255,255,255,0.05)] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.10),0px_4px_6px_-4px_rgba(0,0,0,0.10)]">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-between md:justify-start">
           {weeks.map((week) => {
             const isActive = activeWeek === week.id;
             const isPast = week.status === "past";

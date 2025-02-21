@@ -64,10 +64,19 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
   return (
     <div className="min-h-[calc(100vh-100px)] pt-[72px]">
       {/* Hero Section */}
+      <div className="inset-0 flex items-center justify-center overflow-hidden">
+          <Image
+            src="/brand/headerLeaderboard.svg"
+            alt="Header Leaderboard"
+            width={1440}
+            height={380}
+            style={{ alignItems: "center", maxWidth: "200%" }}
+          />
+        </div>
       <div
         className={`relative overflow-hidden ${
           theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
-        } p-10`}
+        } px-10`}
       >
         {/* Background */}
         {/* <div
@@ -78,15 +87,8 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
         </div> */}
 
         {/* Content */}
-        <div className="relative z-10 mx-auto text-center text-white">
-          <Image
-            src="/brand/headerLeaderboard.svg"
-            alt="Header Leaderboard"
-            width={1440}
-            height={380}
-            style={{ width: "100%" }}
-          />
-        </div>
+        
+
       </div>
 
       {/* Leaderboard Table */}
@@ -109,7 +111,7 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
               </div>
             ) : (
               <div className="bg-surface shadow-lg overflow-hidden">
-                <div className="flex justify-between items-center p-6 bg-[rgba(255,255,255,0.05)]">
+                <div className="flex flex-col md:flex-row justify-between md:items-center p-6 bg-[rgba(255,255,255,0.05)]">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold mb-2">
                       Level {activeWeek} Rankings
@@ -121,7 +123,7 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
                       </p>
                     )}
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 text-sm mt-4 md:mt-0">
                     <span>Show</span>
                     <select
                       value={entriesPerPage}
@@ -173,8 +175,8 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
               metrics={metrics}
               winnersCount={WINNERS_COUNT}
             /> */}
-            <div className="h-[212px] p-6 bg-white/5 rounded-xl shadow-lg flex-col justify-start items-start gap-4 inline-flex overflow-hidden mt-12">
-              <div className="self-stretch justify-start items-center gap-2 inline-flex">
+            <div className="md:p-6 bg-white/5 rounded-xl shadow-lg flex-col justify-start items-start gap-4 inline-flex mt-12">
+              <div className="self-stretch justify-start items-center md:gap-2 inline-flex">
                 <div className="w-5 h-5 relative"></div>
                 <div className="flex-col justify-start items-start inline-flex">
                   <div className="text-white text-xl font-bold leading-7">
@@ -182,8 +184,8 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
                   </div>
                 </div>
               </div>
-              <div className="self-stretch h-[120px] px-6 flex-col justify-start items-start gap-4 flex">
-                <div className="self-stretch h-[120px] flex-col justify-start items-start flex">
+              <div className="self-stretch md:px-6 flex-col justify-start items-start gap-4 flex">
+                <div className="self-stretch flex-col justify-start items-start flex">
                   <div className="self-stretch text-white/70 text-base font-normal leading-normal">
                     The leaderboard updates daily and tracks mini dApps
                     submitted to Hack The Grid. It provides a transparent view
@@ -193,7 +195,7 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
                     level, with indicators showing which have met the KPI
                     threshold to unlock their second milestone.
                   </div>
-                  <div className="self-stretch text-white/70 text-base font-normal leading-normal mt-4 flex gap-4">
+                  <div className="self-stretch text-white/70 text-base font-normal leading-normal mt-4 flex gap-4 flex-col md:flex-row">
                     <span>🥇 Prime Grant Recipient</span>
                     <span>🥈 Core Grant Recipient</span>
                     <span>🥉 Origin Grant Recipient</span>
@@ -220,32 +222,27 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
       )}
 
       {/* CTA Section */}
-      <section
-        className={`p-4 ${
-          theme === "dark" ? "bg-[#0a090d]" : "bg-brand"
-        } mt-auto`}
-      >
-        <div className="flex justify-center gap-8">
-          <Button
-            onClick={() =>
-              window.open(
-                "https://www.notion.so/fnce-foundation/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a",
-                "_blank"
-              )
-            }
-            variant="dark"
-          >
-            Build your mini dApp <ArrowRight size={16} />
-          </Button>
+      <div className="flex flex-col md:flex-row md:justify-center md:gap-8">
+        <Button
+          onClick={() =>
+            window.open(
+              "https://www.notion.so/fnce-foundation/Hack-The-Grid-18c8d1c8a2118073b928dc8de54e5e1a",
+              "_blank"
+            )
+          }
+          variant="dark"
+        >
+          Build your mini dApp <ArrowRight size={16} />
+        </Button>
 
-          <Button
-            onClick={() => window.open("https://x.com/lukso_io", "_blank")}
-            variant="dark"
-          >
-            Follow LUKSO for updates <ArrowRight size={16} />
-          </Button>
-        </div>
-      </section>
+        <Button
+          onClick={() => window.open("https://x.com/lukso_io", "_blank")}
+          variant="dark"
+        >
+          Follow LUKSO for updates <ArrowRight size={16} />
+        </Button>
+      </div>
+
     </div>
   );
 }
