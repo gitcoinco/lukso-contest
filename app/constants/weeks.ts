@@ -1,3 +1,5 @@
+import { formatMetricValue } from "../utils/formatters";
+
 // This would normally come from your backend
 export const CURRENT_WEEK = 1;
 
@@ -35,30 +37,65 @@ export const metricsMap = [
   {
     displayName: "Views",
     metricName: "Show Visitors",
-    description: "Number of unique user impressions of the dApp"
+    description: "Number of unique user impressions of the dApp",
+    startingMetric: "Start Show Visitors",
+    threshold: 1000,
   },
   {
     displayName: "Grid Installs",
     metricName: "Add Visitors",
-    description: "Number of unique users that installed the dApp on their Grid"
+    description: "Number of unique users that installed the dApp on their Grid",
+    startingMetric: "Start Add Visitors",
+    threshold: 50,
   },
   {
     displayName: "Unique Interactions",
     metricName: "Transactions Visitor",
-    description: "Number of unique user transactions"
+    description: "Number of unique user transactions",
+    startingMetric: "Start Transactions Visitor",
+    threshold: 50,
   },
   {
     displayName: "Total Interactions",
     metricName: "Transaction Events",
-    description: "Number of total user transactions"
+    description: "Number of total user transactions",
+    startingMetric: "Start Transaction Events",
+    threshold: 100,
   },
   {
     displayName: "UP Followers",
     metricName: "Followers",
-    description: "Number of total Universal Profile followers"
+    description: "Number of total Universal Profile followers",
+    startingMetric: "Start Followers",
+    threshold: 200, // this one is not an increment but an absolute...
   }
 ]
 
+export function isOverThreshold(metrics: any, metricName: string) {  
+  const metric = metricsMap.find(metric => metric.metricName === metricName)
+  const growth = Math.max(0, Number(metrics[metricName]) - Number(metrics[metric!.startingMetric]));
+
+  let rocket = "";
+
+  //special case followers
+  if (metricName === "Followers") {
+    if(Number(metrics[metricName]) >= metric!.threshold){
+      rocket = "🚀"
+    }
+  }else  if (growth >= metric!.threshold) {
+    rocket = "🚀"
+  }
+
+  return rocket;
+}
+
+export function getTotalValue(metrics: any, metricName: string) {
+  const metric = metricsMap.find(metric => metric.metricName === metricName)
+  const sum = Number(metrics[metricName]) + Number(metrics[metric!.startingMetric]);
+
+  return formatMetricValue(sum, metricName)
+
+}
 
 export function getMetricDisplayname(metricName: string) {
   const metric = metricsMap.find(metric => metric.metricName === metricName)

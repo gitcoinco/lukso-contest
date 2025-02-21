@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`px-2 py-2 md:px-20 md:py-6 fixed top-0 left-0 right-0 z-50 ${theme === "dark" ? "bg-[#0a090d]" : "bg-brand"}`}
+      className={`px-2 py-2 md:px-20 fixed top-0 left-0 right-0 z-50 ${theme === "dark" ? "bg-[#0a090d]" : "bg-brand"}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center">
