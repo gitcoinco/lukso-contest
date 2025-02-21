@@ -56,7 +56,7 @@ export function PrizesSection() {
     <section className="py-10 md:py-24 px-10 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
         <div className="flex flex-col gap-4">
-          <div className="text-white text-4xl md:text-5xl font-medium leading-10">
+          <div className="text-white text-3xl md:text-5xl font-medium leading-10">
             Level up. Grow community. Get funded.
           </div>
           <div className="text-white/70 text-xl font-normal leading-7">

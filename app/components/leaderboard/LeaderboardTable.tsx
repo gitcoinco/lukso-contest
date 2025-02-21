@@ -9,7 +9,7 @@ import { RankedProject } from "../../types/leaderboard";
 import { formatMetricName, formatMetricValue } from "../../utils/formatters";
 import IconWithTooltip from "../IconWithTooltip";
 import {ProfileIcon} from "../ProfileIcon";
-import { getMetricDescription, getMetricDisplayname } from "@/app/constants/weeks";
+import { getMetricDescription, getMetricDisplayname, getTotalValue, isOverThreshold } from "@/app/constants/weeks";
 
 interface LeaderboardTableProps {
   loading: boolean;
@@ -149,7 +149,9 @@ export function LeaderboardTable({
                   </span>
                 </div>
                 <div className="font-medium">
-                  {formatMetricValue(project.metrics[metric], metric)}
+                  {getTotalValue(project.metrics, metric)}
+                  {' '}
+                  {isOverThreshold(project.metrics, metric)}
                 </div>
               </div>
             ))}
@@ -242,7 +244,9 @@ export function LeaderboardTable({
                 </td>
                 {metrics.map((metric) => (
                   <td key={metric} className="px-6 py-4 text-right">
-                    {formatMetricValue(project.metrics[metric], metric)}
+                    {getTotalValue(project.metrics, metric)}
+                    {' '}
+                    {isOverThreshold(project.metrics, metric)}
                   </td>
                 ))}
               </tr>
