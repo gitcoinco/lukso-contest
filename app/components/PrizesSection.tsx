@@ -52,6 +52,23 @@ export const prizes = [
 ];
 
 export function PrizesSection() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Check initially
+    checkMobile();
+    
+    // Add event listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="py-10 md:py-24 px-10 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col gap-10">
@@ -66,7 +83,7 @@ export function PrizesSection() {
 
         <div className="flex flex-col gap-4 mx-auto relative">
           <Image
-            src="/brand/prize.svg"
+            src={isMobile ? "/brand/prizeVertical.svg" : "/brand/prize.svg"}
             alt="Prizes"
             width={1000}
             height={1000}
