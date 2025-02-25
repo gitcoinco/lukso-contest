@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { RankedProject } from "../types/leaderboard";
-import { metricsMap } from "../constants/weeks";
-import { processMetrics } from "../utils/scoring";
+import { getTotalValue, metricsMap } from "../constants/weeks";
+import { getTotalValueNumber, processMetrics } from "../utils/scoring";
 
 interface MetricData {
   tokenAddress: string;
@@ -73,18 +73,21 @@ export function useLeaderboard(week: number) {
     }
 
     const sorted = [...projects].sort((a, b) => {
+      const metric = metricsMap.find((metric) => metric.metricName === key);
       let aValue =
         key === "rank"
           ? a.rank
           : key === "projectName"
             ? a.project.name
-            : a.metrics[key];
+            : Number(a.metrics[key]) +
+              Number(a.metrics[metric!.startingMetric]);
       let bValue =
         key === "rank"
           ? b.rank
           : key === "projectName"
             ? b.project.name
-            : b.metrics[key];
+            : Number(b.metrics[key]) +
+              Number(b.metrics[metric!.startingMetric]);
 
       if (direction === "asc") {
         return aValue > bValue ? 1 : -1;

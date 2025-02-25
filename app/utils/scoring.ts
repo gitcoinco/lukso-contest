@@ -8,7 +8,7 @@ function isIntegerValue(value: string): boolean {
   return /^-?\d+$/.test(value.trim()); // Regex to check if a string is an integer
 }
 
-const getTotalValueNumber = (metric: MetricData, key: string): number => {
+export const getTotalValueNumber = (metric: MetricData, key: string): number => {
   return Number(getTotalValue(metric, key));
 };
 
