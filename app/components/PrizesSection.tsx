@@ -1,9 +1,6 @@
 "use client"
 
 import React from "react";
-import { CURRENT_WEEK, weeks } from "../constants/weeks";
-import { Lock } from "lucide-react";
-import Pill from "./Pill";
 import Image from "next/image";
 import Button from "./Button";
 import { ArrowRight } from "lucide-react";
@@ -83,7 +80,8 @@ export function PrizesSection() {
 
         <div className="flex flex-col gap-4 mx-auto relative">
           <Image
-            src={isMobile ? "/brand/prizeVertical.svg" : "/brand/prize.svg"}
+            // src={isMobile ? "/brand/prizeVertical.svg" : "/brand/prize.svg"}
+            src="/brand/prize.svg"
             alt="Prizes"
             width={1000}
             height={1000}
