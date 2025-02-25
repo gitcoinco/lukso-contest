@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     url: BASE_URL,
     siteName: SITE_TITLE,
-    // images: [
-    //   {
-    //     url: '/og-image.jpg',
-    //     width: 1200,
-    //     height: 630,
-    //     alt: 'HACK THE GRID',
-    //   },
-    // ],
+    images: [
+      {
+        url: '/brand/headerLeaderboard.svg',
+        width: 1200,
+        height: 630,
+        alt: 'HACK THE GRID',
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    // images: ['/og-image.jpg'],
+    images: ['/brand/headerLeaderboard.svg'],
     creator: "@gitcoin",
     site: "@gitcoin",
   },
