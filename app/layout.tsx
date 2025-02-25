@@ -32,6 +32,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'HACK THE GRID',
       },
+      {
+        url: LOGO_PATH,
+        width: 512,
+        height: 512,
+        alt: SITE_TITLE,
+      }
     ],
     locale: "en_US",
     type: "website",
