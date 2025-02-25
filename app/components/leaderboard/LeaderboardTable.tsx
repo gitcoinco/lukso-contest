@@ -179,7 +179,7 @@ export function LeaderboardTable({
             </th> */}
             <th
               className="h-[52px] px-6 text-left text-[14px] font-semibold text-[rgba(255,255,255,0.70)] leading-5 tracking-[-0.16px] cursor-pointer hover:bg-opacity-80"
-              onClick={() => onSort("projectName")}
+              onClick={() => onSort("rank")}
             >
               <div className="flex items-center gap-2">
                 {"Project"}

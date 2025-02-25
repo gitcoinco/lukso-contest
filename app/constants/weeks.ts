@@ -31,9 +31,15 @@ export const weeks = [
         : "upcoming",
 }));
 
+export interface MetricConfig {
+  displayName: string;
+  metricName: string;
+  description: string;
+  startingMetric: string;
+  threshold: number;
+}
 
-
-export const metricsMap = [
+export const metricsMap: MetricConfig[] = [
   {
     displayName: "Views",
     metricName: "Show Visitors",

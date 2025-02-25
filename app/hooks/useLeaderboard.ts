@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { RankedProject } from "../types/leaderboard";
 import { metricsMap } from "../constants/weeks";
+import { processMetrics } from "../utils/scoring";
 
 interface MetricData {
   tokenAddress: string;
@@ -29,7 +30,6 @@ export function useLeaderboard(week: number) {
 
         const json = await response.json();
         const metrics = json.data;
-        // console.log("data: ", metrics);
 
         // grab the keys from the first item in the spreadsheet
         const headers = Object.keys(metrics[0]);
@@ -39,7 +39,6 @@ export function useLeaderboard(week: number) {
         );
         setMetrics(filteredHeaders);
         setMetricKeys(filteredHeaders);
-        // console.log("headers: ", headers);
 
         // we need to zero out any missing or empty values of the metrics we care about
         metrics.forEach((metric: MetricData) => {
@@ -50,20 +49,8 @@ export function useLeaderboard(week: number) {
           });
         });
 
-        const projects: RankedProject[] = [];
+        const projects = processMetrics(metrics, metricsMap);
 
-        metrics.map((element: any) => {
-          projects.push({
-            rank: 0,
-            score: 0,
-            project: {
-              tokenAddress: element.UP,
-              name: element.Project,
-              data: JSON.parse(element["Profile Information"]),
-            },
-            metrics: element,
-          });
-        });
         setProjects(projects);
         setLastUpdated(json.lastUpdated);
       } catch (err) {
