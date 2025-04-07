@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
       <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
         <div className="flex items-center justify-center gap-3 mb-8 md:mb-16 mt-20">
-          <Pill variant="dark">Feb - April 2025</Pill>
+          <Pill variant="dark">Feb - June 2025</Pill>
         </div>
 
         <div className="flex flex-col md:gap-2 md:mb-8 -mb-2">

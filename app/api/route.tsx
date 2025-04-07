@@ -22,7 +22,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
         {
             "level": `${level}`,
-            "data": levelFiltered,
+            // "data": levelFiltered,
+            "data": jsonArray,
             "lastUpdated": new Date().toISOString()
         }
         , { status: 200 });

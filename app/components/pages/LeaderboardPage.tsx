@@ -94,7 +94,7 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
       {/* Leaderboard Table */}
       {activeWeek > 0 ? (
         <>
-          <WeekTabs activeWeek={activeWeek} onWeekChange={setActiveWeek} />
+          {/* <WeekTabs activeWeek={activeWeek} onWeekChange={setActiveWeek} /> */}
           <div className="max-w-7xl mx-auto p-10 py-8">
             {DISABLE_CURRENT_WEEK && activeWeek === defaultWeek ? (
               <div className="bg-surface rounded-xl shadow-lg p-8 text-center">
@@ -114,7 +114,8 @@ export function LeaderboardPage({ defaultWeek = 1 }: LeaderboardPageProps) {
                 <div className="flex flex-col md:flex-row justify-between md:items-center p-6 bg-[rgba(255,255,255,0.05)]">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold mb-2">
-                      Level {activeWeek} Rankings
+                      {/* Level {activeWeek} Rankings */}
+                      Rankings
                     </h2>
                     {lastUpdated && (
                       <p className="text-sm opacity-90 font-normal">
